@@ -1,14 +1,19 @@
-#include <stdio.h>
+#include<stdio.h>
+#include<math.h>
 
-#define max 45
-#define min 21
 
 int main() {
-    int var, var2, bit;
-    scanf("%d", &var);
-    printf("%d\n", min <= var && var <= max);
-    scanf("%d", &var2);
-    bit = (var2 >> (16 - 1)) & 1;
-    printf("%d", bit);
+    unsigned a;
+    printf("введите число в 8 системе счисления\n");
+    scanf("%o", &a);
+    printf("в 10 системе счисления оно выглядит так %d\n", a);
+    printf("вот так в 16 системе счисления-%X, а вот и его побитовый сдвиг на 4 в 16 системе счисления %X\n", a, a >> 4);
+    printf("вот еще 16 система счисления %X а это с отрицанием %X\n", a, ~a);
+    unsigned b, c;
+    printf("введите число в 16 системе\n");
+    scanf("%X", &b);
+    c = b & a;
+    printf("ввели? а вот и их побитовое и %X", c);
+
     return 0;
 }
